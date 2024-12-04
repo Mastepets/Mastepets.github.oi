@@ -1,0 +1,161 @@
+body {
+    font-family: monospace; /* Fuente estilo retro */
+    background-color: #222;
+    color: #f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+
+    
+        background-image: url("/img/fondo1.jpeg"); /* Reemplaza con la ruta de tu imagen */
+        background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-attachment: fixed; /* Fija la imagen al fondo, evitando que se desplace con el scroll */
+        /* Otras propiedades de estilo */
+        font-family: monospace;
+        color: #f0f; 
+      
+}
+
+
+
+.container {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h2 {
+    color: #0f0; /* Verde neón */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0f0; /* Verde neón */
+    color: #222;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.options a {
+    color: #f0f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+body {
+    font-family: monospace; /* Fuente estilo retro */
+    background-color: #222;
+    color: #f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Añadir esta línea */
+}
+
+.container {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 80%; /* Ajustar ancho del contenedor */
+    max-width: 500px; /* Limitar el ancho máximo */
+}
+
+h2 {
+    color: #0f0; /* Verde neón */
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left; /* Alinear etiquetas a la izquierda */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"], /* Añadir estilos para input tel */
+input[type="email"] { /* Añadir estilos para input email */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0f0; /* Verde neón */
+    color: #222;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%; /* Ocupar todo el ancho del contenedor */
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.options a {
+    color: #f0f;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Estilos generales del lobby (puedes agregar más) */
+body {
+    font-family: monospace;
+    background-color: #222;
+    color: #f0f;
+}
+
+h2 {
+    color: #0f0;
+    text-align: center;
+}
+
+body {
+    font-family: monospace;
+    background-color: #222;
+    color: #f0f; 
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Agrega esta línea */
+}
+
+/* Estilos para la vitrina (añadidos en el HTML) */

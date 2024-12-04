@@ -1,0 +1,109 @@
+<?php
+session_start(); // Iniciar la sesión
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION["username"])) {
+  header("Location: index.html"); // Redirigir al login si no ha iniciado sesión
+  exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobby - Retro Gaming</title>
+    <link rel="stylesheet" href="/styles/styles.css"> 
+    <style>
+        /* Estilos para la vitrina */
+        .vitrina {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajustar columnas según el espacio */
+            gap: 20px;
+        }
+        .consola {
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .consola.selected {
+            border-color: #0f0; /* Contorno verde al seleccionar */
+        }
+        .consola img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Bienvenido, <?php echo $_SESSION["username"]; ?>!</h2> 
+
+    <div class="vitrina" id="vitrinaConsolas"> 
+        
+        </div>
+
+    <button id="btnComprar" style="display: none;">Comprar</button>
+
+    <script>
+        // Datos de las consolas (puedes obtenerlos de una base de datos)
+        const consolas = [
+            {
+                nombre: "Atari 2600",
+                imagen: "/.jpg", 
+                año: 1977,
+                juegos: "Pac-Man, Space Invaders, Pitfall!",
+                precio: 150,
+            },
+            {
+                nombre: "Nintendo Entertainment System (NES)",
+                imagen: "nes.jpg",
+                año: 1985,
+                juegos: "Super Mario Bros., The Legend of Zelda, Metroid",
+                precio: 200,
+            },
+            // ... más consolas
+        ];
+
+        // Mostrar las consolas en la vitrina
+        const vitrina = document.getElementById("vitrinaConsolas");
+        consolas.forEach(consola => {
+            const divConsola = document.createElement("div");
+            divConsola.classList.add("consola");
+            divConsola.innerHTML = `
+                <h3>${consola.nombre}</h3>
+                <img src="${consola.imagen}" alt="${consola.nombre}">
+                <p>Año: ${consola.año}</p>
+                <p>Juegos: ${consola.juegos}</p>
+                <p>Precio: $${consola.precio}</p>
+            `;
+            vitrina.appendChild(divConsola);
+
+            // Agregar evento click para seleccionar la consola
+            divConsola.addEventListener("click", () => {
+                // Remover la clase 'selected' de las demás consolas
+                const consolasSeleccionadas = document.querySelectorAll(".consola.selected");
+                consolasSeleccionadas.forEach(c => c.classList.remove("selected"));
+
+                // Agregar la clase 'selected' a la consola clickeada
+                divConsola.classList.add("selected");
+
+                // Mostrar el botón de comprar
+                document.getElementById("btnComprar").style.display = "block";
+            });
+        });
+
+        // Evento click para el botón de comprar
+        document.getElementById("btnComprar").addEventListener("click", () => {
+            const consolaSeleccionada = document.querySelector(".consola.selected");
+            if (consolaSeleccionada) {
+                alert("Compra realizada: " + consolaSeleccionada.querySelector("h3").textContent);
+                // Aquí puedes agregar la lógica para procesar la compra (e.g., enviar datos al servidor)
+            }
+        });
+    </script>
+
+</body>
+</html>
